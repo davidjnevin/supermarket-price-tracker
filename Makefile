@@ -5,7 +5,7 @@ PACKAGE_NAME=app
 VENV_FOLDER=venv
 LAUNCH_IN_VENV=source ${VENV_FOLDER}/bin/activate &&
 PYTHON_VERSION=python3.11
-WEB_DOCKER_NAME=web
+WEB_DOCKER_NAME=supermarket_web
 
 # target: all - Default target. Does nothing.
 all:
@@ -76,8 +76,8 @@ isort:
 	${DOCKER_COMPOSE} exec ${WEB_DOCKER_NAME} isort .
 
 # target: test - test code
-.PHONY: test-web
-test-web:
+.PHONY: test
+test:
 	${DOCKER_COMPOSE} exec ${WEB_DOCKER_NAME} python -m pytest
 
 # target: lint - Lint the code
