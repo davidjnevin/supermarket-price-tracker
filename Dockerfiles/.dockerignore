@@ -1,0 +1,10 @@
+venv
+__pychache__
+.github
+.git
+.gitignore
+.pre-commit-config.yml
+.dockerignore
+Dockerfiles
+.coverage
+htmlcov
