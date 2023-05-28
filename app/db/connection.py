@@ -1,11 +1,5 @@
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 
 from app.db.config import DATABASE_URL
 
-engine = create_engine(DATABASE_URL, echo=True)
-
-
-def hello_connection():
-    with engine.connect() as conn:
-        result = conn.execute(text("select 'hello, connection'"))
-        print(result.all())
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, echo=True)
