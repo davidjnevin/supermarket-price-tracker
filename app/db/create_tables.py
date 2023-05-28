@@ -1,9 +1,4 @@
-from sqlalchemy import create_engine
-
-from app.db.config import DATABASE_URL
-from app.models.schema import create_product_listing
-
-engine = create_engine(DATABASE_URL, echo=True)
+from app.models.product_listing import create_product_listing
 
 
 def create_tables():

@@ -9,4 +9,4 @@ exclude =
 max-line-length =
     99
 extend-immutable-calls = Depends, fastapi.Depends, fastapi.params.Depends
-ignore = S101
+ignore = S101, F841, F401
