@@ -41,8 +41,9 @@ class PriceHistory(Base):
     unit_price: Mapped[float] = mapped_column(Float)
     bulk_price: Mapped[Optional[float]] = mapped_column(Float)
     unit_price_unit_type: Mapped[Optional[str]] = mapped_column(String(50))
-    created_at: Mapped[datetime] = mapped_column(DateTime, onupdate=datetime.now)
-    # ForeignKey
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
+    )
     product_id: Mapped[int] = mapped_column(ForeignKey("product_listing.id"))
 
     def __repr__(self) -> str:
